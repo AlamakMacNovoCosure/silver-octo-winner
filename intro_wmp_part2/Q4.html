@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display_primeNos</title>
+
+    <script>
+        let num;
+
+        do {
+            (num) = parseInt(prompt("Please enter a number between 4 and 50:"));
+
+            if (num < 4) {
+                alert ("Error: Number must be more than or equal to 4.");
+            } else if (num > 50) {
+                alert ("Error: Number must be less than or equal to 50.");
+            }
+        } while (num < 4 || num > 50);
+
+        alert("You entered:" + num)
+
+        function isPrime(num) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }
+
+        function printPrimeNumbers(n) {
+            for (let i = 2; i <= n; i++) {
+                if (isPrime(i)) {
+                    document.write(i + "<br>");
+                }
+            }
+        }
+            printPrimeNumbers(50);
+
+        function sumOfPrimes(limit) {
+            let sum = 0;
+
+            for (let i = 2; i <= limit; i++) {
+                // check if the number is prime
+                if (isPrime(i)) {
+                    // add the prime number to the sum
+                    sum += i;
+                }
+            }
+
+            return sum;  // return the final sum
+        }
+            const limit = 50;
+            const sum = sumOfPrimes(limit);
+            document.write(" Sum of prime numbers is ", sum);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

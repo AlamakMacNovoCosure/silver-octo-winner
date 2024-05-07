@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <span id="hearts">
+        <img src="heart.jpg" />
+        <img src="heart.jpg " />
+        <img src="heart.jpg" />
+      </span>
+    
+    <script>
+      // Get the span element by its ID
+      const spanElement = document.getElementById("hearts");
+
+      // Find the third heart shape using childNodes
+      // Note that childNodes includes both elements and text nodes
+      const thirdHeart = spanElement.childNodes[5]; // Index 5 corresponds to the third image (since there are text nodes in between)
+
+      // Set the new image src
+      thirdHeart.src = "javascript.jpg";
+    </script>
+  </head>
+  <body></body>
+</html>
+
